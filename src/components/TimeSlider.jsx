@@ -17,7 +17,7 @@ export default function TimeSlider({ percent, onChange, startDate, currentDate }
     <div className="bg-white rounded-2xl shadow-soft px-4 py-3.5 mb-4">
       <div className="flex items-center justify-between mb-2.5">
         <span className="text-xs font-semibold text-garden-muted uppercase tracking-wide">
-          Time Travel
+          Garden History
         </span>
         <span
           className={`text-xs font-bold px-2.5 py-1 rounded-full ${
