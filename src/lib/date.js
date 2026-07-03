@@ -46,7 +46,14 @@ export function formatWeekRange(date = new Date()) {
   const start = dates[0];
   const end = dates[6];
   const startStr = start.toLocaleDateString("en-US", { month: "long", day: "numeric" });
-  const endStr = end.toLocaleDateString("en-US", { day: "numeric" });
+  // Only include the month on the end date if the week actually crosses
+  // into a different month — "June 4 - 11" within one month, but
+  // "June 27 - July 4" when the week spans two.
+  const sameMonth = start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear();
+  const endStr = end.toLocaleDateString(
+    "en-US",
+    sameMonth ? { day: "numeric" } : { month: "long", day: "numeric" }
+  );
   return `${startStr} - ${endStr}`;
 }
 
