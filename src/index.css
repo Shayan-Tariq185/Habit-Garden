@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-garden-bg text-garden-ink font-sans antialiased;
+  overscroll-behavior-y: none;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* Hide scrollbar for horizontal carousels but keep scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile app shell frame for desktop viewing */
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: #FAF8F1;
+}
+
+@media (min-width: 640px) {
+  .app-shell {
+    min-height: 100vh;
+    box-shadow: 0 0 0 1px rgba(44,74,43,0.06), 0 30px 60px -20px rgba(44,74,43,0.25);
+  }
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.3) sepia(1) saturate(2) hue-rotate(70deg);
+}
