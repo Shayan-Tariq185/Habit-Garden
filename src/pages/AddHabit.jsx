@@ -52,7 +52,7 @@ export default function AddHabit() {
         {/* Habit name */}
         <div>
           <label className="block text-sm font-medium text-garden-muted mb-2">
-            What do you want to grow?
+            Which habit do you want to grow?
           </label>
           <div className="relative">
             <Sprout size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-garden-leaf" />
